@@ -1,9 +1,9 @@
 #!/bin/bash
 echo "Installing etcd"
 mkdir -p /etc/etcd/
-cp /home/vagrant/k8certs/ca.pem /etc/etcd/
-cp /home/vagrant/k8certs/kubernetes-key.pem /etc/etcd/
-cp /home/vagrant/k8certs/kubernetes.pem /etc/etcd/
+cp /home/vagrant/k8s_certs/ca.pem /etc/etcd/
+cp /home/vagrant/k8s_certs/kubernetes-key.pem /etc/etcd/
+cp /home/vagrant/k8s_certs/kubernetes.pem /etc/etcd/
 FILESIZE=0
 until [ $FILESIZE -gt 1000000 ]; do
   wget -q https://github.com/coreos/etcd/releases/download/v3.1.4/etcd-v3.1.4-linux-amd64.tar.gz

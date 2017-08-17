@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: postgres01
@@ -28,7 +28,7 @@ spec:
       - name: pgvolume01
         scaleIO:
           gateway: https://192.168.50.12:443/api
-          volumeName: pgdata-k8-01
+          volumeName: pgdata-k8s-01
           system: cluster1
           protectionDomain: pdomain
           storagePool: pool1

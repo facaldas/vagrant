@@ -2,14 +2,14 @@
 echo "Installing Kubernetes Controller"
 echo "Moving Kubernetes Controller Certificates"
 mkdir -p /var/lib/kubernetes/
-cp /home/vagrant/k8certs/ca.pem /var/lib/kubernetes/
-cp /home/vagrant/k8certs/ca-key.pem /var/lib/kubernetes/
-cp /home/vagrant/k8certs/admin.pem /var/lib/kubernetes/
-cp /home/vagrant/k8certs/admin-key.pem /var/lib/kubernetes/
-cp /home/vagrant/k8certs/kubernetes.pem /var/lib/kubernetes/
-cp /home/vagrant/k8certs/kubernetes-key.pem /var/lib/kubernetes/
-cp /home/vagrant/k8certs/token.csv /var/lib/kubernetes/
-rm -rf /home/vagrant/k8certs
+cp /home/vagrant/k8s_certs/ca.pem /var/lib/kubernetes/
+cp /home/vagrant/k8s_certs/ca-key.pem /var/lib/kubernetes/
+cp /home/vagrant/k8s_certs/admin.pem /var/lib/kubernetes/
+cp /home/vagrant/k8s_certs/admin-key.pem /var/lib/kubernetes/
+cp /home/vagrant/k8s_certs/kubernetes.pem /var/lib/kubernetes/
+cp /home/vagrant/k8s_certs/kubernetes-key.pem /var/lib/kubernetes/
+cp /home/vagrant/k8s_certs/token.csv /var/lib/kubernetes/
+rm -rf /home/vagrant/k8s_certs
 echo "Downloading kube-apiserver"
 curl -s -O https://storage.googleapis.com/kubernetes-release/release/v1.7.0/bin/linux/amd64/kube-apiserver
 echo "Downloading kube-controller-manager"

@@ -64,8 +64,8 @@ do
     MESOSINSTALL="$2"
     shift
     ;;
-    -k8|--k8install)
-    K8INSTALL="$2"
+    -k8s|--k8s_install)
+    K8S_INSTALL="$2"
     shift
     ;;
     *)
@@ -87,7 +87,7 @@ echo DOCKERINSTALL     = "${DOCKERINSTALL}"
 echo REXRAYINSTALL     = "${REXRAYINSTALL}"
 echo SWARMINSTALL     = "${SWARMINSTALL}"
 echo MESOSINSTALL     = "${MESOSINSTALL}"
-echo K8INSTALL     = "${K8INSTALL}"
+echo K8S_INSTALL     = "${K8S_INSTALL}"
 echo ZIP_OS    = "${ZIP_OS}"
 
 VERSION_MAJOR=`echo "${VERSION}" | awk -F \. {'print $1'}`
@@ -189,9 +189,9 @@ if [ "${MESOSINSTALL}" == "true" ]; then
   /vagrant/scripts/mesos-master.sh
 fi
 
-if [ "${K8INSTALL}" == "true" ]; then
-  /vagrant/scripts/k8/etcd.sh
-  /vagrant/scripts/k8/k8controller.sh
+if [ "${K8S_INSTALL}" == "true" ]; then
+  /vagrant/scripts/k8s/etcd.sh
+  /vagrant/scripts/k8s/k8s_controller.sh
 fi
 
 if [[ -n $1 ]]; then
